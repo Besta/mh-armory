@@ -39,15 +39,6 @@ $(document).ready(function() {
     select += "</select>";
     $(".js-cerca").append(select);
     
-    $(".js-add").click(function() {
-        var name = $(this).parent().find(".js-name").text();
-        add(name);
-    }); 
-
-    $(".js-remove").click(function() {
-        var name = $(this).parent().find(".js-name").text();
-        remove(name);
-    });
     
     $("body").on("click", ".js-set td:not(:first-child):not(.x-active)", function(){
         if($(this).text()){
