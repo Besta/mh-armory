@@ -4,12 +4,13 @@ function add(name, value, type, item) {
         if($(".js-equip [data-name='" + name + "']").length > 0){
             $(".js-equip [data-name='" + name + "']").find("span").text(parseInt($(".js-equip [data-name='" + name + "']").find("span").text()) + value);
         } else {
-            $(".js-equip").append('<div data-type="'+type+'" data-name="' + name + '" class="mh-equip__bonus">+<span>'+value+'</span> '+name+'</div>')
+            $(".js-equip").append('<div class="row" data-type="'+type+'" data-name="' + name + '"><div class="col s4"></div><div class="col s8 text-right">+<span>'+value+'</span> '+name+'</div></div>')
         }
+        $(".js-"+type).append("+" + value + " " + name);
     }
 }
 
-function remove(name, value) {
+function remove(name, value, type) {
     if($(".js-equip [data-name='" + name + "']").length > 0){
         $(".js-equip [data-name='" + name + "']").find("span").text(parseInt($(".js-equip [data-name='" + name + "']").find("span").text()) - value);
 
@@ -17,6 +18,7 @@ function remove(name, value) {
             $(".js-equip [data-name='" + name + "']").remove();
         }
     }
+    $(".js-"+type).text("");
 }
 
 $(document).ready(function() {
@@ -45,7 +47,6 @@ $(document).ready(function() {
     
     $('select').material_select();
     
-    
     $("body").on("click", ".js-set td:not(:first-child):not(.x-active)", function(){
         if($(this).text()){
             let item = $(this);
@@ -66,7 +67,8 @@ $(document).ready(function() {
         $.each(bonuses, function() {
             var n = $(this).find(".js-name").text();
             var v = parseInt($(this).find(".js-value").text());
-            remove(n,v);
+            var t = $(this).find(".js-name").data("type");
+            remove(n,v,t);
         })
     });
     
