@@ -39,6 +39,8 @@ $(document).ready(function() {
     select += "</select>";
     $(".js-cerca").append(select);
     
+    $('select').material_select();
+    
     
     $("body").on("click", ".js-set td:not(:first-child):not(.x-active)", function(){
         if($(this).text()){
@@ -68,8 +70,7 @@ $(document).ready(function() {
         $("[data-name='"+event.target.value+"']").closest("td").addClass("x-filtered");
         
         if($(".x-filtered").length > 0) {
-            $("html, body").animate({"scrollTop":$(".x-filtered").first().offset().top}, 500);
+            $("html, body").animate({"scrollTop":$(".x-filtered").first().offset().top - 100}, 500);
         }       
     });
-    
 });
