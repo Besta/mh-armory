@@ -2,38 +2,60 @@
 <html>
 <head>
     <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    
     <script src="skill.js"></script>
     <script src="equip.js"></script>
     <script src="index.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
-    
-    <h1>Equip</h1>
-    <div class="js-cerca">
-        
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper red darken-4">
+                <div class="row">
+                    <div class="col s12">
+                        <a href="#" class="brand-logo">Monster Hunter Armory</a>
+                    </div>
+                </div>
+              </div>
+        </nav>
     </div>
-    <table class="mh-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Chest</th>
-                <th>Helm</th>
-                <th>Hands</th>
-                <th>Legs</th>
-                <th>Bots</th>
-            </tr>
-        </thead>
-        <tbody class="js-set">
-            
-        </tbody>
-    </table>
-    
-    <h1>Skill list</h1>
-    <table class="js-skills mh-skills"></table>
-    
-    <div class="js-equip mh-equip">
-        <h3>Bonus:</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col s3">
+            <div class="card hoverable red darken-4 mh-equip">
+                    <div class="card-content white-text">
+                        <span class="card-title">Bonus</span>
+                        <div class="js-equip"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s9">      
+                <div class="row">
+                    <div class="input-field col s6 js-cerca"></div>
+                </div>
+
+                
+                <table class="mh-table bordered highlight">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Chest</th>
+                            <th>Helm</th>
+                            <th>Hands</th>
+                            <th>Legs</th>
+                            <th>Bots</th>
+                        </tr>
+                    </thead>
+                    <tbody class="js-set">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </body>
 </html>
