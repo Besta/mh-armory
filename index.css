@@ -1,0 +1,56 @@
+body {
+    padding: 0 10px;
+    margin: 30px 0 0;
+}
+
+.mh-skills tr {
+    border-bottom: 1px solid black;
+}
+.mh-skills p {
+    margin: 0 0 5px;
+    padding: 0;
+    display: inline-block;
+}
+
+.mh-skills span {
+    cursor: pointer;
+}
+
+.mh-equip {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 6px;
+    background: white;
+    padding: 10px;
+}
+
+h1, h2, h3 {
+    margin: 0 0 10px;
+}
+
+
+.mh-table tr {
+    margin: 5px 0;
+}
+
+.mh-table td {
+    margin: 0;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    border-right: 1px solid lightgray;
+}
+
+.mh-table .x-active {
+    background: lightgray;
+}
+
+.mh-table .x-filtered {
+    background: yellow;
+}
+
+.mh-table .x-active.x-filtered { 
+    background: lightgreen;
+}
