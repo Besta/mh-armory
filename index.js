@@ -1,8 +1,11 @@
-function add(name, value) {
-    if($(".js-equip [data-name='" + name + "']").length > 0){
-        $(".js-equip [data-name='" + name + "']").find("span").text(parseInt($(".js-equip [data-name='" + name + "']").find("span").text()) + value);
-    } else {
-        $(".js-equip").append('<div data-name="' + name + '" class="mh-equip__bonus">+<span>'+value+'</span> '+name+'</div>')
+function add(name, value, type, item) {
+    if(!$(".js-equip [data-type='" + type + "']").length > 0){
+        item.addClass("x-active");
+        if($(".js-equip [data-name='" + name + "']").length > 0){
+            $(".js-equip [data-name='" + name + "']").find("span").text(parseInt($(".js-equip [data-name='" + name + "']").find("span").text()) + value);
+        } else {
+            $(".js-equip").append('<div data-type="'+type+'" data-name="' + name + '" class="mh-equip__bonus">+<span>'+value+'</span> '+name+'</div>')
+        }
     }
 }
 
@@ -19,11 +22,12 @@ function remove(name, value) {
 $(document).ready(function() {
     $.each(equip, function() {
         var html = "<tr><td>"+this.name+"</td>";
-        $.each(this.bonus, function() {
+        $.each(this.equip, function() {
            html += "<td>";
+           let equipName = this.name;
            $.each(this.bonus, function() {
                if(this.name.toString()){
-                html += "<div class='js-container'><span data-name='"+this.name.toString()+"' class='js-name'>"+this.name.toString()+"</span> <span class='js-value'>" +this.value.toString()+"</span></div>";   
+                html += "<div class='js-container'><span data-type='"+equipName+"' data-name='"+this.name.toString()+"' class='js-name'>"+this.name.toString()+"</span> <span class='js-value'>" +this.value.toString()+"</span></div>";   
                }
            });
             html += "</td>";
@@ -51,12 +55,13 @@ $(document).ready(function() {
     
     $("body").on("click", ".js-set td:not(:first-child):not(.x-active)", function(){
         if($(this).text()){
-            $(this).addClass("x-active");
+            let item = $(this);
             var bonuses = $(this).find(".js-container");
             $.each(bonuses, function() {
                 var n = $(this).find(".js-name").text();
                 var v = parseInt($(this).find(".js-value").text());
-                add(n,v);
+                var t = $(this).find(".js-name").data("type");
+                add(n,v,t,item);
             })
         }
     });
