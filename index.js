@@ -22,7 +22,9 @@ $(document).ready(function() {
         $.each(this.bonus, function() {
            html += "<td>";
            $.each(this.bonus, function() {
+               if(this.name.toString()){
                 html += "<div class='js-container'><span data-name='"+this.name.toString()+"' class='js-name'>"+this.name.toString()+"</span> <span class='js-value'>" +this.value.toString()+"</span></div>";   
+               }
            });
             html += "</td>";
         });
@@ -48,13 +50,15 @@ $(document).ready(function() {
     });
     
     $("body").on("click", ".js-set td:not(:first-child):not(.x-active)", function(){
-        $(this).addClass("x-active");
-        var bonuses = $(this).find(".js-container");
-        $.each(bonuses, function() {
-            var n = $(this).find(".js-name").text();
-            var v = parseInt($(this).find(".js-value").text());
-            add(n,v);
-        })
+        if($(this).text()){
+            $(this).addClass("x-active");
+            var bonuses = $(this).find(".js-container");
+            $.each(bonuses, function() {
+                var n = $(this).find(".js-name").text();
+                var v = parseInt($(this).find(".js-value").text());
+                add(n,v);
+            })
+        }
     });
     
     $("body").on("click", ".js-set td.x-active", function(){

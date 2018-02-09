@@ -65,7 +65,7 @@ var equip = [
             "name": "chest",
             "bonus": [
                {
-                  "name": "-",
+                  "name": "",
                   "value": 1
                }
             ]
@@ -74,7 +74,7 @@ var equip = [
             "name": "hands",
             "bonus": [
                {
-                  "name": "-",
+                  "name": "",
                   "value": 1
                }
             ]
@@ -83,7 +83,7 @@ var equip = [
             "name": "legs",
             "bonus": [
                {
-                  "name": "-",
+                  "name": "",
                   "value": 1
                }
             ]
@@ -92,7 +92,7 @@ var equip = [
             "name": "boots",
             "bonus": [
                {
-                  "name": "-",
+                  "name": "",
                   "value": 1
                }
             ]
@@ -169,7 +169,7 @@ var equip = [
             "name": "chest",
             "bonus": [
                {
-                  "name": "-",
+                  "name": "",
                   "value": 1
                }
             ]
@@ -178,7 +178,7 @@ var equip = [
             "name": "hands",
             "bonus": [
                {
-                  "name": "-",
+                  "name": "",
                   "value": 1
                }
             ]
@@ -187,7 +187,7 @@ var equip = [
             "name": "legs",
             "bonus": [
                {
-                  "name": "-",
+                  "name": "",
                   "value": 1
                }
             ]
@@ -196,7 +196,7 @@ var equip = [
             "name": "boots",
             "bonus": [
                {
-                  "name": "-",
+                  "name": "",
                   "value": 1
                }
             ]
